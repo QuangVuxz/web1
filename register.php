@@ -62,34 +62,36 @@
       include 'config.php';
       
       if(isset($_POST['submit'])){
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, md5($_POST['password']));
-        $cpassword = mysqli_real_escape_string($conn, md5($_POST['passwordConfirm']));
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $cpassword = $_POST['passwordConfirm'];
         $image = $_FILES['image']['name'];
         $image_size = $_FILES['image']['size'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'uploaded_img/' .$image;
 
-        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE username='$username' AND password='$password'") or die('query failed');
-        if(mysqli_num_rows($select)>0){
+        $check_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE username='$username' AND password='$password'") or die('query failed');
+        $check_email = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email='$email'") or die('query failed');
+        if(mysqli_num_rows($check_user)>0){          
           $message[] = 'user already exist';
+        }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+          $message[] = 'Invalid email format';
+        }elseif(mysqli_num_rows($check_email)){
+          $message[] = 'email already used';
+        }elseif($password != $cpassword){
+          $message[] = 'confirm password not matched!';          
+        }elseif($image_size > 2000000){
+          $message[] = 'image is too large';          
         }else{
-          if($password != $cpassword){
-            $message[] = 'confirm password not matched!';          
-          }elseif($image_size > 2000000){
-            $message[] = 'image is too large';
+          $insert = mysqli_query($conn, "INSERT INTO `user_form`(username, email, password, image) VALUES('$username', '$email', '$password', '$image')") or die('query failed');
+          if($insert){
+            move_uploaded_file($image_tmp_name, $image_folder);
+            $message[] = 'registered successfully!';              
           }else{
-            $insert = mysqli_query($conn, "INSERT INTO `user_form`(username, email, password, image) VALUES('$username', '$email', '$password', '$image')") or die('query failed');
-            if($insert){
-              move_uploaded_file($image_tmp_name, $image_folder);
-              $message[] = 'registered successfully!';
-              header('location:login.php');
-            }else{
               $message[] = 'registration failed!';
-            }
           }
-        }
+        }        
       }
     ?>
   </head>
@@ -131,7 +133,7 @@
           <input type="submit" name="submit" value="Register" id="submit">          
           <div id="register">
             Already have an account?
-            <a href="login.html">Login here</a>
+            <a id="btn-login" href="login.php">Login here</a>
           </div>
         </div>
       </form>

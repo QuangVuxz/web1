@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia;
+    color: black;
+}
+  
+body {    
+    height: 100vh;
+}
+/* Style the search bar */
+form {
+    /* Add some padding and a border */          
+    /* Use flexbox to center the search bar within the form element */
+    display: flex;
+    justify-content: center;
+}        
+input[type="text"] {
+    /* Give the search bar some padding and a border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Make the search bar wider */
+    width: 50%;
+    /* Add some rounded corners */
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+main{
+    max-width: 1500px;
+    width: 95%;
+    margin:30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+
+main .music_card{
+    max-width: 600px;
+    flex: 1 1 210px;
+    text-align: center;    
+    border: 1px solid lightgray;
+    margin: 20px;
+}
+
+main .music_card .image{
+    height:50%;
+    margin-bottom:20px;
+}
+
+main .music_card .image img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;    
+}
+main .music_card .caption{
+    font-weight:bold;
+    padding-left: 1em;
+    text-align: left;
+    line-height: 3em;
+    height: 25%;
+}
+
+main .music_card .caption p{
+    font-size:1.5rem;
+}
+
+main .music_card .caption .rate{
+    display:flex;
+}
+
+main .music_card button a{
+    width:50%;
+    text-decoration: none; 
+    color: black;   
+}
+
+main .music_card button{
+    border: 2px solid black;
+    padding: 1em;
+    width: 80%;
+    cursor: pointer;
+    margin-top: 2em;
+    font-weight: bold;
+    position: relative;
+    border-radius: 15px;    
+}
+
+main .music_card button:hover{    
+    background: orange;
+}

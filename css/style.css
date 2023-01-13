@@ -1,20 +1,16 @@
-@import url("http://fonts.googleapis.com/css2?family=Nunito+Sans:wght@2006display=swap");
-
-:root {
-  --font-style: "Nunito Sans", sans-serif;
-}
-
-* {
+*{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #BEEBF1, #F3ACCC);
-  height: 100vh;
-  overflow: hidden;
-  font-family: monospace;
-  background-image: url('../32b04702a2da4699ab378a0e7dcb45ff.jpg');
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;      
+  
 }
+
 
 .login-box {
   position: absolute;
@@ -160,4 +156,9 @@ h4 {
   line-height: 22px;
   font-size: 18px;
 }
-
+#btn-register:hover{
+  color: red;
+}
+#btn-login:hover{
+  color: red;
+}

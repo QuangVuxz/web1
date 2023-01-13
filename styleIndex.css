@@ -1,16 +1,23 @@
-/* Add some styling to the page */
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
       body {
-        font-family: Arial, sans-serif;
-        color: #333;
-        background-image: url('32b04702a2da4699ab378a0e7dcb45ff.jpg');
-        background-size: cover;
-        background-position: center;
+        font-family: Arial, sans-serif;         
+        
+      }
+      .header{
+        background-color: #0b0f19;
+        margin-bottom: 30px;
+      }
+      #nav{
+        margin-bottom: 15px;
       }
       ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+        list-style-type: none;    
+        margin-bottom: 15px;    
       }
       
       li {
@@ -18,47 +25,79 @@
       }
       
       li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+        color: white;        
+        text-decoration: none;        
+      }
+      #nav--button{
+        border-color: white;
+        background-color: black;
+        border-radius: 10px;
       }
       
-      li.current a, li a:hover, li a:active, li a:focus {
-        background-color: #111;
+      
+      li.current a, li a:hover, li a:active, li a:focus {        
         color:red;
       }
-      h1 {
+      .header h1 {
         font-size: 3em;
-        text-align: center;
-        margin: 1em 0;
+        text-align: center;        
         color: white;
       }
       
-      p {
+      .header p {
         font-size: 1.5em;
-        line-height: 1.5;
-        margin: 0.5em 0;
+        line-height: 1.5;        
         color: white;
-      }
-      
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 1em;
       }
       
       /* Add some styling to the call-to-action button */
       .cta-btn {
         display: inline-block;
         padding: 0.5em 1em;
-        color: white;
+        color: black;
         background-color: #00b0ff;
         border-radius: 0.25em;
         text-decoration: none;
+        margin-top: 30px;
+        margin-bottom: 30px;
       }
       
       .cta-btn:hover {
         background-color: #0091ea;
       }
+
+      .content{
+        background-color:#FFFFFF;        
+      }
+      .content h1{
+        margin-bottom: 20px;
+      }
+      #card{        
+      padding: 40px 65px 40px 40px;
+      border: 1px solid black;
+      border-radius: 14px;
+      }
+      #card:hover{
+        box-shadow: 14px 22px 52px -12px rgba(127, 127, 127, 0.13);
+      }
+      .faq{
+        background-color:#0b0f19;
+        margin-top: 30px;
+        padding: 30px;
+      }
+      .faq h1{
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .faq h3{
+        color: white;
+      }
+      .faq p{
+        color: white;
+      }
+      #faq--card{
+        padding: 40px 65px 40px 40px;
+        border: 1px solid white;
+        border-radius: 14px;
+      }      

@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  height: 100vh;
+}
+
+.piano-container {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-left: 13rem;
+  justify-self: center;
+}
+.lesson-iframe{
+  display: flex;
+  border: 10px solid #000634;
+  position: relative;
+  margin-top: 2rem;
+  justify-self: center;
+}
+.key {
+  width: 4rem;
+  height: 13rem;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 2px 2px 10px 0px #ccc;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.white-key {
+  border: 3px solid #010425;
+  background-color: #fff;
+  transition: 0.2s all;
+}
+
+.white-active,
+.white-key:hover {
+  background-color: rgba(81, 182, 178);
+  border-bottom: none;
+  transform: rotate3d(1, 0, 0, 20deg);
+}
+
+.black-key {
+  background: rgb(36, 32, 30);
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(36, 32, 30, 1) 26%,
+    rgba(79, 82, 71, 1) 86%
+  );
+  height: 7rem;
+  width: 1.5rem;
+  position: absolute;
+  top: 20px;
+  transition: 0.2s all;
+}
+
+.black-1 {
+  left: 44px;
+}
+
+.black-2 {
+  left: 84px;
+}
+
+.black-3 {
+  left: 164px;
+}
+
+.black-4 {
+  left: 204px;
+}
+.black-5 {
+  left: 244px;
+}
+
+.black-6 {
+  left: 324px;
+}
+.black-7 {
+  left: 365px;
+}
+
+.black-8 {
+  left: 444px;
+}
+
+.black-9 {
+  left: 484px;
+}
+
+.black-10 {
+  left: 524px;
+}
+.black-11 {
+  left: 604px;
+}
+
+.black-12 {
+  left: 644px;
+}
+
+.black-13 {
+  left: 724px;
+}
+
+.black-14 {
+  left: 764px;
+}
+
+.black-15 {
+  left: 804px;
+}
+
+.black-key:hover, .black-active{
+  background: linear-gradient(
+    180deg,
+    rgba(36, 32, 30, 1) 26%,
+    rgba(136, 173, 33) 86%
+  );
+  transform: translateY(20px);
+}
+.tutorial-white-key{
+  display: inline-block;
+  margin-left: 3rem;
+}
+.tutorial-black-key{
+  display: inline-block;
+}
+
+            /* Style the search bar */
+form {
+    /* Add some padding and a border */
+    
+    /* Use flexbox to center the search bar within the form element */
+    display: flex;
+    justify-content: center;
+    }
+
+    input[type="text"] {
+    /* Give the search bar some padding and a border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Make the search bar wider */
+    width: 50%;
+    /* Add some rounded corners */
+    border-radius: 10px;
+    margin-right: 10px;
+    }
+    /* Style the container element */
+    .container {
+    /* Add some padding and a border */
+        padding: 20px;
+        border: 1px solid #ccc;
+        /* Center the content within the container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
